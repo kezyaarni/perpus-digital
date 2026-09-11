@@ -137,8 +137,8 @@ Proyek ini menggunakan lisensi [MIT](LICENSE). Silakan gunakan dan modifikasi se
 Jika ada pertanyaan atau saran, silakan hubungi:
 
 - Nama: Nama Anda
-- Email: email@contoh.com
-- GitHub: [@username](https://github.com/username)
+- Email: kezyahasnaanggraini@gmail.com
+- GitHub: [@kezyaarni](https://github.com/username)
 
 ---
 

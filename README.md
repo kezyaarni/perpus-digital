@@ -1,59 +1,145 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 📚 Sistem Peminjaman Perpustakaan
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Aplikasi web untuk mengelola proses peminjaman dan pengembalian buku perpustakaan, dibangun menggunakan **Laravel**. Aplikasi ini membantu petugas perpustakaan mengelola data buku, anggota, transaksi peminjaman, serta menghasilkan laporan secara efisien.
 
-## About Laravel
+## ✨ Fitur
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- 🔐 Autentikasi & manajemen hak akses (Admin / Petugas / Anggota)
+- 📖 Manajemen data buku (tambah, edit, hapus, kategori, stok)
+- 👤 Manajemen data anggota perpustakaan
+- 🔄 Peminjaman & pengembalian buku
+- ⏰ Notifikasi jatuh tempo & denda keterlambatan
+- 🔍 Pencarian & filter buku
+- 📊 Laporan peminjaman (harian/bulanan/tahunan)
+- 🖨️ Cetak bukti peminjaman / kartu anggota
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+> Sesuaikan daftar fitur di atas dengan fitur yang benar-benar ada pada aplikasi Anda.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## 🛠️ Teknologi yang Digunakan
 
-## Learning Laravel
+- **Backend:** Laravel (PHP)
+- **Database:** MySQL / MariaDB
+- **Frontend:** Blade, Bootstrap / Tailwind CSS
+- **Tools:** Composer, NPM/Vite
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+## 📋 Prasyarat
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Pastikan sistem Anda sudah memiliki:
 
-## Laravel Sponsors
+- PHP >= 8.1
+- Composer
+- Node.js & NPM
+- MySQL / MariaDB
+- Web server (Apache/Nginx) atau bisa menggunakan `php artisan serve`
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## 🚀 Instalasi
 
-### Premium Partners
+1. **Clone repository**
+   ```bash
+   git clone https://github.com/username/nama-repo.git
+   cd nama-repo
+   ```
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+2. **Install dependency PHP**
+   ```bash
+   composer install
+   ```
 
-## Contributing
+3. **Install dependency JavaScript**
+   ```bash
+   npm install
+   ```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+4. **Salin file environment**
+   ```bash
+   cp .env.example .env
+   ```
 
-## Code of Conduct
+5. **Generate application key**
+   ```bash
+   php artisan key:generate
+   ```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+6. **Konfigurasi database**
 
-## Security Vulnerabilities
+   Buka file `.env` dan sesuaikan konfigurasi berikut:
+   ```env
+   DB_CONNECTION=mysql
+   DB_HOST=127.0.0.1
+   DB_PORT=3306
+   DB_DATABASE=nama_database
+   DB_USERNAME=root
+   DB_PASSWORD=
+   ```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+7. **Jalankan migrasi dan seeder**
+   ```bash
+   php artisan migrate --seed
+   ```
 
-## License
+8. **Buat symbolic link storage** (jika menggunakan upload file/gambar)
+   ```bash
+   php artisan storage:link
+   ```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+9. **Compile asset frontend**
+   ```bash
+   npm run dev
+   ```
+
+10. **Jalankan server**
+    ```bash
+    php artisan serve
+    ```
+
+Aplikasi dapat diakses melalui: `http://127.0.0.1:8000`
+
+## 👥 Akun Default (Contoh)
+
+| Role   | Email                                       | Password |
+|--------|----------------------------------------------|----------|
+| Admin  | admin@perpustakaan.com                        | password |
+| Anggota| anggota@perpustakaan.com                       | password |
+
+> Ganti akun default ini setelah instalasi untuk keamanan.
+
+## 📁 Struktur Direktori (Ringkas)
+
+```
+├── app/
+│   ├── Http/Controllers/   # Controller aplikasi
+│   ├── Models/             # Model Eloquent
+├── database/
+│   ├── migrations/         # Skema database
+│   ├── seeders/            # Data awal
+├── resources/
+│   ├── views/               # Tampilan Blade
+├── routes/
+│   ├── web.php               # Routing aplikasi
+```
+
+## 🤝 Kontribusi
+
+Kontribusi sangat terbuka! Silakan ikuti langkah berikut:
+
+1. Fork repository ini
+2. Buat branch fitur baru (`git checkout -b fitur-baru`)
+3. Commit perubahan (`git commit -m 'Menambahkan fitur baru'`)
+4. Push ke branch (`git push origin fitur-baru`)
+5. Buat Pull Request
+
+## 📄 Lisensi
+
+Proyek ini menggunakan lisensi [MIT](LICENSE). Silakan gunakan dan modifikasi sesuai kebutuhan.
+
+## 📧 Kontak
+
+Jika ada pertanyaan atau saran, silakan hubungi:
+
+- Nama: Nama Anda
+- Email: email@contoh.com
+- GitHub: [@username](https://github.com/username)
+
+---
+
+⭐ Jangan lupa beri **star** jika proyek ini bermanfaat!
